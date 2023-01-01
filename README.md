@@ -1,1 +1,2 @@
-# KYHFND22-JavaScript2
+# KYH JavaScript 2
+Kursmaterial för JavaScript 2
