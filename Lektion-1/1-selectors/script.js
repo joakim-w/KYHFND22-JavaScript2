@@ -43,7 +43,7 @@ const list = document.querySelector('.list')
 // console.log(list.nextSibling)
 // console.log(list.nextElementSibling)
 
-console.log(list.parentElement.parentElement)
+// console.log(list.parentElement.parentElement)
 
 
 listItems.forEach(item => {
@@ -53,4 +53,75 @@ listItems.forEach(item => {
     e.target.parentElement.remove()
 
   })
+})
+
+
+
+
+// EVENTS
+
+// console.log(window)
+
+const btn = document.querySelector('#btn')
+const stopBtn = document.querySelector('#btn2')
+const link = document.querySelector('a')
+
+// Detta sätt bör vi undvika då vi inte får samma kontroll som addEventListener
+
+// btn.onclick = function() {
+//   console.log('do stuff 1')
+// }
+// btn.onclick = function() {
+//   console.log('do stuff 2')
+// }
+
+
+
+
+// btn.addEventListener('click', function(e) {
+//   console.log('do stuff 1')
+// }, { once: true })
+
+
+
+// function eventFunction() {
+//   console.log('do stuff 2')
+// }
+// btn.addEventListener('click', eventFunction)
+
+// stopBtn.addEventListener('click', () => {
+//   // Om vi ska ta bort en eventListener så MÅSTE add & remove se exakt likadana ut
+//   // Vi måste då alltså använda en funktion som ligger utanför
+//   btn.removeEventListener('click', eventFunction)
+// })
+
+
+
+// btn.addEventListener('dblclick', (e) => {
+//   console.log(e)
+// })
+
+const logTarget = (e) => {
+  console.log(e.target)
+}
+
+btn.addEventListener('click', logTarget)
+stopBtn.addEventListener('click', logTarget)
+
+header.addEventListener('mousemove', (e) => {
+  // console.log(e)
+  header.style.background = `rgb(${e.offsetX}, ${e.offsetY}, 0)`
+})
+
+
+link.addEventListener('click', (e) => {
+  e.preventDefault()
+  // link.innerText = 'till Yahoo'
+  window.location.replace('https://se.yahoo.com/')
+})
+
+
+document.forms[0].addEventListener('submit', e => {
+  e.preventDefault()
+  console.log('skickar formulär')
 })
