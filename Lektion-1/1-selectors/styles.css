@@ -44,9 +44,10 @@ body {
   justify-content: space-between;
   width: 100%;
   gap: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: .1rem;
   border-left: 4px solid #333;
-  padding-left: 1rem
+  padding-left: 1rem;
+  padding-block: .5rem
 }
 
 .list-item:hover {
@@ -66,4 +67,17 @@ body {
   width: 100%;
   padding: .4em;
   margin-bottom: .5rem;
+}
+
+
+.active {
+  border-left-color: rgb(236, 24, 24);
+  background-color: #cecece;
+}
+.active span {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.active button {
+  font-weight: bold;
 }

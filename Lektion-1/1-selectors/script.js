@@ -193,3 +193,14 @@ list.addEventListener('click', e => {
     e.target.parentElement.remove()
   }
 })
+
+list.addEventListener('click', e => {
+  if(e.target.nodeName === 'SPAN') {
+    // e.target.style.fontWeight = 'bold'
+    // e.target.style.fontSize = '1.1rem'
+    // e.target.nextElementSibling.style.fontWeight = 'bold'
+    // e.target.parentElement.style.backgroundColor = '#cecece'
+
+    e.target.parentElement.classList.toggle('active')
+  }
+})
