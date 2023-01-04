@@ -59,3 +59,8 @@
   padding: .2rem 1rem;
   border-bottom: 1px solid rgb(171, 171, 171);
 }
+
+.completed {
+  text-decoration: line-through;
+  color: rgb(186, 186, 186);
+}
