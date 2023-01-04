@@ -54,16 +54,7 @@ document.querySelector('#output').addEventListener('click', e => {
   }
 })
 
-const createItemElement = (inputValue) => {
-  newItem = {
-    id: crypto.randomUUID(),
-    name: inputValue,
-    complete: false
-  }
-
-  items.push(newItem)
-  
-
+const createItemElement = (inputValue, id) => {
 
   const item = document.createElement('div')
   item.classList.add('item')
@@ -73,7 +64,7 @@ const createItemElement = (inputValue) => {
 
   const button = document.createElement('button')
   button.innerText = 'delete'
-  button.id = newItem.id
+  button.id = id
 
   // button.addEventListener('click', () => {
   //   button.parentElement.remove()
@@ -85,8 +76,6 @@ const createItemElement = (inputValue) => {
 
 
   // document.querySelector('#output').appendChild(item)
-
-
 
   return item
 }
@@ -102,8 +91,14 @@ form.addEventListener('submit', e => {
     return
   }
 
+  const newItem = {
+    id: crypto.randomUUID(),
+    name: inputValue,
+    complete: false
+  }
+  items.push(newItem)
 
-  const item = createItemElement(inputValue);
+  const item = createItemElement(inputValue, newItem.id);
   document.querySelector('#output').appendChild(item);
   localStorage.setItem('itemList', JSON.stringify(items))
 
@@ -124,7 +119,7 @@ const loadItems = () => {
   }
   
   items.forEach(item => {
-    output.appendChild(createItemElement(item.name));
+    output.appendChild(createItemElement(item.name, item.id));
   })
 }
 
