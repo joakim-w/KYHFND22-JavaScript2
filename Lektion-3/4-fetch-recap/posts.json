@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "title": "Hur man använder fetch",
+    "body": "Det här är ett inlägg om hur fetch fungerar. Det är jättekul"
+  },
+  {
+    "id": 2,
+    "title": "Varför är Joakim bäst?",
+    "body": "Högst oklart.. är han ens det?"
+  }
+
+]
