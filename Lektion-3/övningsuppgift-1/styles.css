@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  color-scheme: dark;
+}
+.wrapper {
+  background-color: #333;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  width: 400px;
+  background-color: #555;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.content::before {
+  content: open-quote;
+}
+.content::after {
+  content: close-quote;
+}
+
+.author {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: .4em 1.5em;
+}
