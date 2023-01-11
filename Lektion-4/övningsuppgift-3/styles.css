@@ -37,3 +37,9 @@ body {
 .user_email {
   font-size: .7em;
 }
+
+.user_name,
+.user_company,
+.user_email {
+  pointer-events: none;
+}
