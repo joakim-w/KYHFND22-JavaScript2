@@ -2,6 +2,7 @@ const BASE_URL = "https://jsonplaceholder.typicode.com/users/"
 const users = []
 
 const userList = document.querySelector('#user-list')
+const form = document.querySelector('#form')
 
 // const getUsers = () => {
 //   fetch(BASE_URL)
@@ -89,4 +90,35 @@ const removeUser = e => {
     })
 }
 
+const handleSubmit = e => {
+  e.preventDefault()
+  // tbd Validera formuläret.
+
+
+  const newUser = {
+    name: document.querySelector('#name').value,
+    email: document.querySelector('#email').value,
+    company: {
+      name: document.querySelector('#company').value,
+    }
+  }
+
+  fetch(BASE_URL, {
+  method: 'POST',
+  body: JSON.stringify(newUser),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((data) => {
+
+    users.push(data)
+    const userElement = createUserElement(data)
+    userList.appendChild(userElement)
+  });
+
+}
+
 userList.addEventListener('click', removeUser)
+form.addEventListener('submit', handleSubmit)
