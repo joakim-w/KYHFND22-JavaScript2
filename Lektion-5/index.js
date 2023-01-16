@@ -27,6 +27,8 @@ getPosts()
 const createCardElement = (post) => {
   const card = document.createElement('a')
   card.className = 'card bg-dark p-2 mb-3 text-white text-decoration-none'
+  // card.href = `details.html?id=${post.id}`
+  card.setAttribute('href', `details.html?id=${post.id}`)
 
   const title = document.createElement('h2')
   title.innerText = post.title
@@ -38,4 +40,3 @@ const createCardElement = (post) => {
 
   return card
 }
-
