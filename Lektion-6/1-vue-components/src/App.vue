@@ -1,15 +1,26 @@
 <template>
   <Header />
 
-  
+  <div class="container">
+    <AddForm />
+    <TodoList />
+  </div>
 
 </template>
 
-<script>
+<script setup>
+import Header from './components/Header.vue'
+import AddForm from './components/AddForm.vue'
+import TodoList from './components/TodoList.vue'
+
 
 </script>
 
-<style>
+<div>
+  
+</div>
+  
+  <style>
 * {
   padding: 0;
   margin: 0;
