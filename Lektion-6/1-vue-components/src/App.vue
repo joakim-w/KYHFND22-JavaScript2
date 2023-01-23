@@ -2,8 +2,8 @@
   <Header />
 
   <div class="container">
-    <AddForm />
-    <TodoList />
+    <AddForm @add-todo="handleAdd" />
+    <TodoList :todos="todos" @delete-todo="handleDeleteTodo" />
   </div>
 
 </template>
@@ -12,7 +12,21 @@
 import Header from './components/Header.vue'
 import AddForm from './components/AddForm.vue'
 import TodoList from './components/TodoList.vue'
+import { ref } from 'vue';
 
+
+const todos = ref([
+  {id: 1, title: 'todo1', completed: false},
+  {id: 2, title: 'todo2', completed: true},
+])
+
+const handleDeleteTodo = (id) => {
+  todos.value = todos.value.filter(todo => todo.id !== id)
+}
+
+const handleAdd = (title) => {
+  todos.value.push({ id: crypto.randomUUID(), title, completed: false })
+}
 
 </script>
 

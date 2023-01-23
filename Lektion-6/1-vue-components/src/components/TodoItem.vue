@@ -1,12 +1,18 @@
 <template>
   <div class="todo">
     <p>{{ todo.title }}</p>
-    <button>X</button>
+    <button @click="handleDelete">X</button>
   </div>
 </template>
 
 <script setup>
-  defineProps(['todo'])
+  const props = defineProps(['todo'])
+  const emit = defineEmits(['delete-todo'])
+
+  const handleDelete = () => {
+    
+    emit('delete-todo', props.todo.id)
+  }
 </script>
 
 <style scoped>
