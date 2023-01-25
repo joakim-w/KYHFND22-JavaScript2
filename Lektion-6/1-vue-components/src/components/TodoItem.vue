@@ -1,6 +1,6 @@
 <template>
   <div class="todo">
-    <p>{{ todo.title }}</p>
+    <p :class="todo.completed ? 'done' : ''">{{ todo.title }}</p>
     <button @click="handleDelete">X</button>
   </div>
 </template>
@@ -22,5 +22,9 @@
     align-items: center;
     border-bottom: 1px solid #333;
     padding-block: 1rem;
+  }
+  .done {
+    text-decoration: line-through;
+    color: #eee;
   }
 </style>
